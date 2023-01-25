@@ -28,7 +28,7 @@ function login() {
   
   if (user == "test" && pass == "test") {
     localStorage.setItem("login", "true");
-    window.location.href = "http://127.0.0.1:5500/index.html";
+    window.location.href = "https://angelrodea.github.io/index.html";
   } else {
     alert("Usuario o contraseña incorrecta");
   }
