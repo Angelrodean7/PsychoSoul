@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PsychoSoul</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Sintony:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="payment.css">
+</head>
+
+<body>
+    <div id="main-container">
+        <main>
+            <header>
+                <div id="logo">PsychoSoul</div>
+                <nav>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="consultas.html">Consultas</a></li>
+                        <li><a href="nosotros.html">Sobre nosotros</a></li>
+                        <li><a href="contacto.html">Contacto</a></li>
+                    </ul>
+                </nav>
+                <div id="main-button">
+                    <a href="#" id="menu-button" class="header-button"">Mi Cuenta</a>
+                    <ul id="menu-list" style="display:none; border-radius: 20px;">
+                        <li id="appointment"><a href="cita.html">Agendar cita</a></li>
+                        <li id="payment"><a href="payment.html">Pagar</a></li>
+                        <li id="change-password"><a href="change.html">Cambiar contraseña</a></li>
+                        <li id="logout"><a href="index.html" onclick="signOut()">Cerrar sesión</a></li>
+                    </ul>
+                </div>
+            </header>
+
+            <section id="mar-container">
+                <div class="layout">
+                    <div id="mar-description-container">
+                        <h3 style="margin-top: 3.1%; text-align: center;">Método de pago</h3>
+                        <form id="form_pago" onsubmit="return false;">
+                            <p>Número de tarjeta:</p>
+                            <input type="number" id="card-number" name="card-number" class="inputs" required>
+
+                            <p>Nombre del titular:</p>
+                            <input type="text" id="card-name" name="card-name" class="inputs" required>
+
+                            <p>Fecha de vencimiento:</p>
+                            <select name="expiration-month" id="expiration-month"
+                                style="width: 5%; text-align: center; border-radius: 4px;">
+                                <option value="1">01</option>
+                                <option value="2">02</option>
+                                <option value="3">03</option>
+                                <option value="4">04</option>
+                                <option value="5">05</option>
+                                <option value="6">06</option>
+                                <option value="7">07</option>
+                                <option value="8">08</option>
+                                <option value="9">09</option>
+                                <option value="10">10</option>
+                                <option value="11">11</option>
+                                <option value="12">12</option>
+                            </select>
+                            <select name="expiration-year" id="expiration-year"
+                                style="width: 8%; text-align: center; border-radius: 4px;">
+                                <option value="2023">2023</option>
+                                <option value="2024">2024</option>
+                                <option value="2025">2025</option>
+                                <option value="2026">2026</option>
+                            </select>
+
+                            <p>CVV:</p>
+                            <input type="number" id="cvv" name="cvv" required
+                                style="border-radius: 4px; border-width: 1px;">
+
+                            <br><br><br>
+                            <button class="btn primary-button" onclick="pago()" style="margin-bottom: 35px; 
+                                border-width: 0; font-size: 16px;">Pagar</button>
+                        </form>
+                        <p class="img-overlap">Aceptamos la mayoría de tarjetas de crédito y débito</p>
+                        <img src="img/pago.png" class="img-overlap">
+                    </div>
+                </div>
+            </section>
+
+            <!---------------------------------Modal Pago----------------------------------------------->
+            <div class="modal fade" id="ModalPayment" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h4 class="modal-title" id="myModalLabel">Gracias por su preferencia</h4>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <b>Su pago se ha realizado correctamente</b>
+                            <br><br>
+                            Ahora puede agendar sus citas <a href="cita.html">aquí</a>. 
+                            <br><br>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn primary-button" data-dismiss="modal">Aceptar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <div class="layout">
+                <div class="logo" style="color: rgba(251, 251, 251, 0.5);">
+                    PsychoSoul 2023 Copyright © Todos los derechos reservados
+                </div>
+
+                <div class="links">
+                    <ul>
+                        <li><a href="preguntas.html">Preguntas frecuentes</a></li>
+                        <li><a href="contacto.html">Contacto</a></li>
+                        <li><a href="privacidad.html">Privacidad</a></li>
+                    </ul>
+                </div>
+            </div>
+        </footer>
+    </div>
+</body>
+
+<!-- Bootstrap JavaScript -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+    integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+    crossorigin="anonymous"></script>
+<script type="text/javascript" src="main.js"></script>
+</html>

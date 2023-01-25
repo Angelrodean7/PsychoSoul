@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PsychoSoul</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined"
+      rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Sintony:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="cita.css">
+</head>
+<body>
+    <div id="main-container">
+        <main>
+            <header>
+                <div id="logo">PsychoSoul</div>
+                <nav>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="consultas.html">Consultas</a></li>
+                        <li><a href="nosotros.html">Sobre nosotros</a></li>
+                        <li><a href="contacto.html">Contacto</a></li>
+                    </ul>
+                </nav>
+                <div id="main-button">
+                    <a href="#" id="menu-button" class="header-button"">Mi Cuenta</a>
+                    <ul id="menu-list" style="display:none; border-radius: 20px;">
+                        <li id="appointment"><a href="cita.html">Agendar cita</a></li>
+                        <li id="payment"><a href="payment.html">Pagar</a></li>
+                        <li id="change-password"><a href="change.html">Cambiar contraseña</a></li>
+                        <li id="logout"><a href="index.html" onclick="signOut()">Cerrar sesión</a></li>
+                    </ul>
+                </div>
+            </header>
+
+            <section id="mar-container">
+                <div class="layout">
+                    <div id="mar-description-container">
+                        <h3 style="margin-top: 3.1%; text-align: center;">Agende su cita con nosotros</h3>
+                        <br>
+                        <form id="form_cita" onsubmit="return false;">
+                            <p>Seleccione su psicólogo</p>
+                            <select id="doctor" name="doctor" class="inputs">
+                                <option value="1">Andrés López</option>
+                                <option value="2">Eva Hernández</option>
+                                <option value="3">Hanna Fernández</option>
+                            </select>
+                            <br><br>
+                            <p>Seleccione una fecha:</p>
+                            <input type="date" id="date" name="date" min="2023-01-21" class="inputs" required> 
+                            <br><br>
+                            <p>Seleccione la hora:</p>
+                            <input type="time" id="hour" name="hour" class="inputs" required> 
+                            <!-- value="" min="2023-01-01" max="2023-12-31" -->
+                            <br><br><br>
+                            <button class="btn primary-button" onclick="cita()" style="margin-bottom: 40px;">Agendar cita</button>
+                        </form>
+                        <img src="img/cita.png" class="img-overlap">
+                    </div>
+                </div>
+            </section>
+
+            <!---------------------------------Modal Cita----------------------------------------------->
+            <div class="modal fade" id="myModalCita" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h4 class="modal-title" id="myModalLabel">Gracias por su preferencia</h4>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <!-- Form goes here -->
+                            <h2 id="data"></h2>
+                            <b>Su cita se ha agendado correctamente</b>
+                            <br><br>
+                            Recuerde que debe conectarse puntualmente
+                            <br><br>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn primary-button" data-dismiss="modal">Aceptar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!---------------------------------Modal No Cita----------------------------------------------->
+            <div class="modal fade" id="myModalNoCita" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h4 class="modal-title" id="myModalLabel">Lo sentimos</h4>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <!-- Form goes here -->
+                            <h2 id="data"></h2>
+                            <b>Su cita no se ha agendado</b>
+                            <br><br>
+                            Lamentamos los inconvenientes, este doctor no se encuentra disponible esa hora
+                            <br><br>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn primary-button" data-dismiss="modal">Aceptar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!---------------------------------Modal Pago----------------------------------------------->
+            <div class="modal fade" id="myModalPago" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h4 class="modal-title" id="myModalLabel">Lo sentimos</h4>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <b>No se ha podido agendar su cita</b>
+                            <br><br>
+                            Debe realizar su pago <a href="payment.html">aquí</a> para poder agendar una cita. Lamentamos los inconvenientes.
+                            <br><br>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn primary-button" data-dismiss="modal">Aceptar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <div class="layout">
+                <div class="logo" style="color: rgba(251, 251, 251, 0.5);">
+                    PsychoSoul 2023 Copyright © Todos los derechos reservados
+                </div>
+
+                <div class="links">
+                    <ul>
+                        <li><a href="preguntas.html">Preguntas frecuentes</a></li>
+                        <li><a href="contacto.html">Contacto</a></li>
+                        <li><a href="privacidad.html">Privacidad</a></li>
+                    </ul>
+                </div>
+            </div>
+        </footer>
+    </div>
+</body>
+
+<!-- Bootstrap JavaScript -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+    integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+    crossorigin="anonymous"></script>
+<script type="text/javascript" src="main.js"></script>
+</html>

@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PsychoSoul</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Sintony:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="consultas.css">
+</head>
+
+<body>
+    <div id="main-container">
+
+        <main>
+            <header>
+                <div id="logo">PsychoSoul</div>
+                <nav>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="consultas.html">Consultas</a></li>
+                        <li><a href="nosotros.html">Sobre nosotros</a></li>
+                        <li><a href="contacto.html">Contacto</a></li>
+                    </ul>
+                </nav>
+                <div id="main-button">
+                    <a href="#" id="menu-button" class="header-button"">Mi Cuenta</a>
+                    <ul id="menu-list" style="display:none; border-radius: 20px;">
+                        <li id="appointment"><a href="cita.html">Agendar cita</a></li>
+                        <li id="payment"><a href="payment.html">Pagar</a></li>
+                        <li id="change-password"><a href="change.html">Cambiar contraseña</a></li>
+                        <li id="logout"><a href="index.html" onclick="signOut()">Cerrar sesión</a></li>
+                    </ul>
+                </div>
+            </header>
+
+            <!---------------------------------Membresia Basica------------------------------------------>
+            <section id="impresos">
+                <div class="layout" id="basic">
+                    <div id="impresos-container">
+                        <div class="panel-left" id="basica">
+                            <h3 style="color: var(--primary-color); text-align: center;">
+                                Membresía Básica
+                            </h3>
+
+                            <h3 class="caract">Características</h3>
+                            <p class="content-block">
+                                ● Incluye 3 consultas al mes.
+                                <br>
+                                ● Acceso ilimitado a los foros dentro de la plataforma web.
+                                <br>
+                                ● No incluye consulta de atención psicológica urgente.
+                                <br>
+                                ● No incluye atención al cliente preferencial.
+                                <br>
+                                ● No incluye emblema al lado del nombre de usuario.
+                                <br><br><br>
+                            <h3 class="caract" style="font-size: 20px;">
+                                Precio $ 499.00
+                            </h3>
+                            <div class="buttons-container">
+                                <a href="#" class=" btn complement-button" data-toggle="modal" data-target="#myModal">
+                                    <i class="material-icons-outlined">shopping_basket</i>Comprar
+                                </a>
+                            </div>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!---------------------------------Membresia Especial---------------------------------------->
+            <section id="impresos">
+                <div class="layout" id="special">
+                    <div id="impresos-container">
+                        <div class="panel-right">
+                            <div class="align-right">
+
+                            </div>
+
+                            <h3>
+                                Membresía Especial
+                            </h3>
+
+                            <h3 class="caract" style="color: var(--bg-color);">
+                                Características
+                            </h3>
+
+                            <p class="content-block">
+                                ● Incluye 6 consultas al mes.
+                                <br>
+                                ● Acceso ilimitado a los foros dentro de la plataforma web.
+                                <br>
+                                ● Incluye 1 consulta de atención psicológica urgente en caso de requerirse al mes.
+                                <br>
+                                ● Atención al cliente preferencial.
+                                <br>
+                                ● No incluye emblema al lado del nombre de usuario.
+                                <br><br><br>
+                            <h3 class="caract" style="font-size: 20px; color: var(--bg-color);">
+                                Precio $ 749.00
+                            </h3>
+                            <div class="buttons-container">
+                                <a href="#" class=" btn complement-button"
+                                    style="max-width: 6em; background-color: rgba(255, 255, 255, 0.598);" 
+                                    data-toggle="modal" data-target="#myModal">
+                                    <i class="material-icons-outlined">shopping_basket
+                                    </i>Comprar
+                                </a>
+                            </div>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!---------------------------------Membresia de Emergencia----------------------------------->
+            <section id="impresos">
+                <div class="layout" id="emergency">
+                    <div id="impresos-container" style="margin-bottom: 8%;">
+                        <div class="panel-left">
+                            <h3 style="color: var(--primary-color);">
+                                Membresía Emergencia
+                            </h3>
+
+                            <h3 class="caract">Características</h3>
+                            <p class="content-block">
+                                ● Incluye 12 consultas al mes.
+                                <br>
+                                ● Acceso ilimitado a los foros dentro de la plataforma web.
+                                <br>
+                                ● Inclue 3 consultas de atención psicológica urgente en caso de requerirse al mes.
+                                <br>
+                                ● Atención al cliente preferencial.
+                                <br>
+                                ● Un emblema de diamante al lado del nombre de usuario para indicar que se trata de un 
+                                usuario de “Diamante”.
+                                <br><br><br>
+                            <h3 class="caract" style="font-size: 20px;">
+                                Precio $ 1,499.00
+                            </h3>
+                            <div class="buttons-container">
+                                <a href="#" class=" btn complement-button"
+                                    style="max-width: 6em; background-color: rgba(255, 255, 255, 0.598);" 
+                                    data-toggle="modal" data-target="#myModal">
+                                    <i class="material-icons-outlined">shopping_basket
+                                    </i>Comprar
+                                </a>
+                            </div>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!---------------------------------Modal Formulario------------------------------------------>
+            <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h4 class="modal-title" id="myModalLabel">Bienvenido</h4>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <form id="form_data" name="form" onsubmit="return false;">
+                            <div class="modal-body">
+                                <!-- Form goes here -->
+                                <span>Nombre</span><br>
+                                <input type="text" id="name" name="name" placeholder="ej. Juan Alvarado Zamora" required
+                                    style="width: 95%;">
+                                <br><br>
+                                <span>Correo electrónico</span><br>
+                                <input type="email" id="email" name="email" placeholder="ej. example@gmail.com" required
+                                    style="width: 95%;">
+                                <br><br>
+                                <span>Domicilio</span><br>
+                                <input type="text" id="adress" name="adress"
+                                    placeholder="ej. Av. Té 950, Granjas México, Iztacalco, 08400, CDMX" required
+                                    style="width: 95%;">
+                                <br><br>
+                                <span>Edad</span><br>
+                                <input type="number" id="age" name="age" placeholder="ej. 24" required
+                                    style="width: 95%;">
+                                <br><br>
+                                <span>Motivo</span><br>
+                                <input type="text" id="reason" name="reason" placeholder="ej. Depresión" required
+                                    style="width: 95%;">
+                                <br><br>
+                                <span>Número celular</span><br>
+                                <input type="number" id="number" name="number" placeholder="ej. +52 5542808631" required
+                                    style="width: 95%;">
+                                <br><br>
+                                <span>Tipo de membresía</span><br>
+                                <select id="membership" name="membership" style="width: 95%;">
+                                    <option value="basic">Básica</option>
+                                    <option value="special">Especial</option>
+                                    <option value="emergency">Emergencia</option>
+                                  </select>
+                                <br><br>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn secondary-button" data-dismiss="modal"
+                                    style="color: var(--bg-color);">Cerrar</button>
+                                <button class="btn primary-button" onclick="modal()">Enviar</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            
+            <!---------------------------------Modal Login----------------------------------------------->
+            <div class="modal fade" id="myModalLogin" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h4 class="modal-title" id="myModalLabel">Gracias por su preferencia</h4>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <!-- Form goes here -->
+                            <p style="padding-top: 5%; margin-bottom: 0; text-align: center;">
+                            <h2 id="data"></h2>
+                            <b>Guarde la siguente información ya que es importante para su atención</b>
+                            <br><br>
+                            Su folio es: <b>998184626189282</b>
+                            <br>
+                            Su usuario es: <b>test</b>
+                            <br>
+                            Su contraseña es: <b>test</b>
+                            <br><br>
+                            Recuerde que puede cambiarla una vez que inicie sesión
+                            </p>
+                            <br><br>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn primary-button" data-dismiss="modal">Aceptar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <div class="layout">
+                <div class="logo" style="color: rgba(251, 251, 251, 0.5);">
+                    PsychoSoul 2023 Copyright © Todos los derechos reservados
+                </div>
+
+                <div class="links">
+                    <ul>
+                        <li><a href="preguntas.html">Preguntas frecuentes</a></li>
+                        <li><a href="contacto.html">Contacto</a></li>
+                        <li><a href="privacidad.html">Privacidad</a></li>
+                    </ul>
+                </div>
+            </div>
+        </footer>
+    </div>
+</body>
+
+<!-- Bootstrap JavaScript -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+    integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+    crossorigin="anonymous"></script>
+<script type="text/javascript" src="main.js"></script>
+
+</html>

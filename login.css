@@ -1,0 +1,114 @@
+:root{
+    --bg-color: #095f79;
+    --primary-color: #F2D2DB;
+    --secondary-color: #095f79;
+    --accent-color: #fff;
+    --bg-color-btn-hover: #e8e2e2;
+}
+
+.btn{
+    display: inline-flex;
+    align-items: center;
+    vertical-align: top;
+    padding: 20px 30px;
+    border-radius: 10px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+    margin-right: 15px;
+    font-weight: bold;   
+}
+
+.primary-button{
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+}
+
+.btn:hover {
+    background-color: var(--bg-color-btn-hover);
+}
+
+body{
+    font-family: 'Sintony', sans-serif;
+
+    padding: 0;
+    margin: 0;
+    margin-bottom: 0;
+    padding-bottom: 0;
+    background-color: var(--bg-color);
+    background: linear-gradient(270deg, var(--bg-color) 50%,rgba(7, 128, 164,1) 100%);
+}
+
+#impresos .layout{
+    width: 900px;
+}
+
+#impresos-container{
+    display:flex;
+    position: relative;
+}
+
+#impresos-container .panel-left, 
+#impresos-container .panel-right{
+    height: 650px;
+    width: 100%;
+    margin-top: 8%;
+    border-radius: 2em;
+}
+
+#impresos-container .panel-left{
+    background-color: rgb(239, 247, 246);
+    text-align: center;
+}
+
+#impresos-container .panel-left .content-block{
+    width: 80%;
+    margin: 0 auto;
+    text-align: left;
+    line-height: 25px;
+}
+
+.layout{
+    position: relative;
+    width: 1280px;
+    margin: 0 auto;
+}
+
+h3{
+    color: var(--secondary-color);
+    font-size: 40px;
+    margin: 0;
+    padding: 40px 0;
+}
+
+form {
+    font-size: 25px;
+    margin-top: 6%;
+    margin-left: 15%;
+    margin-right: 0;
+    margin-bottom: 5px;
+    align-items: left;
+    text-align: left;
+    float: left;
+}
+form p {
+    font-size: 25px;
+    margin-bottom: 5px;
+    align-items: left;
+    text-align: left;
+}
+
+img {
+    width: 400px;
+    height: 350px;
+    object-fit: cover;
+}
+
+.img-overlap {
+    position: absolute;
+    top: 30%;
+    left: 48%;
+}  
+
+.align-right{
+    text-align: right;
+}

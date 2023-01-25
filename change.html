@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PsychoSoul</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined"
+      rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Sintony:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="change.css">
+</head>
+<body>
+    <div id="main-container">
+        <main>
+            <header>
+                <div id="logo">PsychoSoul</div>
+                <nav>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="consultas.html">Consultas</a></li>
+                        <li><a href="nosotros.html">Sobre nosotros</a></li>
+                        <li><a href="contacto.html">Contacto</a></li>
+                    </ul>
+                </nav>
+                <div id="main-button">
+                    <a href="#" id="menu-button" class="header-button"">Mi Cuenta</a>
+                    <ul id="menu-list" style="display:none; border-radius: 20px;">
+                        <li id="appointment"><a href="cita.html">Agendar cita</a></li>
+                        <li id="payment"><a href="payment.html">Pagar</a></li>
+                        <li id="change-password"><a href="change.html">Cambiar contraseña</a></li>
+                        <li id="logout"><a href="index.html" onclick="signOut()">Cerrar sesión</a></li>
+                    </ul>
+                </div>
+            </header>
+
+            <section id="mar-container">
+                <div class="layout">
+                    <div id="mar-description-container">
+                        <h3 style="margin-top: 3.1%; text-align: center;">Cambiar contraseña</h3>
+                        <form id="form_pass" onsubmit="return false;">
+                            <p>Igrese su contraseña actual</p>
+                            <input type="password" id="pass-act" name="pass-act" class="inputs" required>
+                            
+                            <p>Ingrese su nueva contraseña:</p>
+                            <input type="password" id="pass-new" name="pass-new" class="inputs" required>
+                            
+                            <p>Repita su nueva contraseña:</p>
+                            <input type="password" id="pass-new2" name="pass-new2" class="inputs" required>
+
+                            <br><br><br>
+                            <button class="btn primary-button" style="margin-bottom: 35px; 
+                                border-width: 0; font-size: 16px;" onclick="pass()">Cambiar</button>
+                        </form>
+                         <img src="img/img-change.png" class="img-overlap"> 
+                    </div>
+                </div>
+            </section>
+
+            <!---------------------------------Modal Contraseña----------------------------------------------->
+            <div class="modal fade" id="ModalPass" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h4 class="modal-title" id="myModalLabel">Contraseña cambiada correctamente</h4>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            Recuerde guardar su contraseña y no la comparta con nadie.
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn primary-button" data-dismiss="modal">Aceptar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <div class="layout">
+                <div class="logo" style="color: rgba(251, 251, 251, 0.5);">
+                    PsychoSoul 2023 Copyright © Todos los derechos reservados
+                </div>
+
+                <div class="links">
+                    <ul>
+                        <li><a href="preguntas.html">Preguntas frecuentes</a></li>
+                        <li><a href="contacto.html">Contacto</a></li>
+                        <li><a href="privacidad.html">Privacidad</a></li>
+                    </ul>
+                </div>
+            </div>
+        </footer>
+    </div>
+</body>
+
+<!-- Bootstrap JavaScript -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+    integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+    crossorigin="anonymous"></script>
+<script type="text/javascript" src="main.js"></script>
+</html>

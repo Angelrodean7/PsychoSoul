@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PsychoSoul</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined"
+      rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Sintony:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="login.css">
+</head>
+<body>
+    <div id="main-container">
+        <main>
+            <section id="impresos">
+                <div class="layout" id="basic">
+                    <div id="impresos-container">
+                        <div class="panel-left" id="basica">
+                            <form id="form_login" onsubmit="return false;">
+                                <h3>Bienvenido</h3>
+                                <p>Usuario</p>
+                                <input type="text" placeholder="username" required id="username" name="username">
+                                <p>Contraseña</p>
+                                <input type="password" placeholder="*******" required id="password" name="password">
+                                <br>
+                                <a href="#" style="font-size: 12px;">Olvidé mi contraseña</a>
+                                <br><br>
+                                <button class="btn primary-button" onclick="login()">Iniciar sesión</button>
+                            </form>
+                            <img src="img/ilustracion.png" class="img-overlap">
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+</body>
+<script type="text/javascript" src="main.js"></script>
+</html>
