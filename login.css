@@ -1,7 +1,7 @@
 :root{
-    --bg-color: #095f79;
+    --bg-color: #0b7596;
     --primary-color: #F2D2DB;
-    --secondary-color: #095f79;
+    --secondary-color: #0b7596;
     --accent-color: #fff;
     --bg-color-btn-hover: #e8e2e2;
 }
@@ -35,7 +35,7 @@ body{
     margin-bottom: 0;
     padding-bottom: 0;
     background-color: var(--bg-color);
-    background: linear-gradient(270deg, var(--bg-color) 50%,rgba(7, 128, 164,1) 100%);
+    background: linear-gradient(270deg, var(--bg-color) 50%,rgba(19, 162, 206,1) 100%);
 }
 
 #impresos .layout{
