@@ -1,2 +1,2 @@
-# psychosoul.github.io
+# psychosoul
 Web Page for Desarrollo Emprendedor
